@@ -12,7 +12,7 @@ Access it at the github repository [here](https://github.com/raaghda/githubdirec
 The app is built on the [Github API v3](https://developer.github.com/v3/), which provides easy accessible and a wide database of all information connected to the github user.
 
 # Built with
-⋅⋅*Bootstrap
+- Bootstrap
 
 # Process
 After having felt the frustration in using Github to search for users, the app idea came naturally as I started working with APIs. The Github API contains a lot of useful information and is a great way to learn to work with api's. The goal with this app is to provide the user with the most important/interesting information that it may look for when searching for a github user. 
