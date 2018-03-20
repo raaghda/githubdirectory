@@ -1,0 +1,23 @@
+.profileContainer {
+    background-color: white;
+    margin: 5px 20px;
+    padding: 20px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.avatar img{
+    max-width: 100%;
+}
+.favatar img{
+    max-width: 39px;
+    max-height: 39px;
+    float: left;
+    padding: 3px;
+}
+
+.loader{
+    max-width: 50px;
+    max-height: 50px;
+    display: block;
+    margin: 0 auto;
+}
