@@ -46,3 +46,7 @@ input#searchUser {
     display: block;
     margin: 0 auto;
 }
+
+.label-primary {
+    cursor: pointer;
+}
