@@ -1583,24 +1583,28 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 80%;
   }
 }
 @media (min-width: 992px) {
+  .container searchContainer {
+    width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 80%;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 80%;
   }
 }
 .container-fluid {
@@ -1612,6 +1616,8 @@ pre code {
 .row {
   margin-right: -15px;
   margin-left: -15px;
+  margin-top: 10px;
+  border-radius: 30px;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
@@ -2548,17 +2554,18 @@ output {
   color: #555;
 }
 .form-control {
+  margin: auto;
   display: block;
-  width: 100%;
-  height: 34px;
+  width: 45%;
+  height: 40px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555;
+  color: #000;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 20px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
   -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
@@ -3116,8 +3123,8 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #92d0d4;
+  border-color: #92d0d4;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -3127,8 +3134,8 @@ fieldset[disabled] .btn-default.focus {
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: lightblue;
+  border-color: #92d0d4;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -6758,7 +6765,7 @@ button.close {
 
 
 .card-body {
-    background: #fff;
+    background: white;
     margin: 5px 20px;
     padding: 20px;
     border-radius: 5px;

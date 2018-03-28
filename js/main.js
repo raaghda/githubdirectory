@@ -41,7 +41,7 @@ function renderFollowers(follower){
     //add card HTML to the div
     followersCard.innerHTML= `<img src="${follower.avatar_url}">
   `
-    //Appends the div to repos
+    //Appends the div to followers, i.e favatars 
     document.getElementById("follow").appendChild(followersCard);
 }
 
@@ -54,7 +54,6 @@ function networkLoaded(network){
 }
 function loadNetwork(){
     const followers = fetch('https://api.github.com/users/'+ searchText +'/followers').then(toJson);
-    
     const following = fetch('https://api.github.com/users/'+ searchText +'/following').then(toJson);
     
     //A promise that the data will be collected from both followers and following before it is sent to network loaded
@@ -66,15 +65,15 @@ function userLoaded(responseData){
     //The data will be filled in the below created HTML section.
     profileContainer.innerHTML=`
         <div class="profileContainer row">
-            <div class="avatar col-12 col-sm-3">
+            <div class="avatar col-12 col-xs-4">
                 <img src="${responseData.avatar_url}">
             </div>
-            <div class="userInfo col-12 col-sm-9">
+            <div class="userInfo col-12 col-xs-8">
                 <div class="username">${responseData.name}</div>
                 <div class="location">${responseData.location}</div>
                 <div class="location">${responseData.blog}</div>
                 <div class="buttons">
-                    <div id="button-1" class="button button-1 label label-success">My Network ${responseData.followers + responseData.following}</div>
+                    <div id="button-1" class="button button-1 label label-primary">My Network ${responseData.followers + responseData.following}</div>
                 <a href="${responseData.html_url}" target="_blank" class="label label-info">View Profile</a>
 
                 </div>
@@ -104,12 +103,12 @@ function onInputChange(e){
     if (e.keyCode==13){
         //The value typed in by the user is assigned to searchText
         searchText=userSearchInputBox.value;
-        //if the searchText is not empty, we fetch
+        //if the searchText is not empty
         if (searchText.length > 0){
             profileContainer.innerHTML='<img class="loader" src="images/loader.gif">';
             // If the profile is cached from a previous visit
             if (localStorage.getItem('cachedProfile')){
-                //The cached profile is read from the being previously saved 
+                //The cached profile is read from the being previously saved. The text is made into Json
                 var cachedProfile = JSON.parse(localStorage.getItem('cachedProfile'));
                 //If the time span of the cached profile has exceeded 10 seconds, the localstorage will remove the cached profile
                 if (new Date().getTime() - cachedProfile.cachedDate > 10000){ 
@@ -120,15 +119,13 @@ function onInputChange(e){
                         userLoaded(cachedProfile);  
                         return;
                     }   
-                }
-                
+                }    
             }
-            // Fetch will run asyncronised, and when it is done we convert it also asyncronised in the function toJson. And when that is done, we trigger the function userLoaded
+            // Fetch will run asyncronised, and when it is done we convert it also asyncronised in the function toJson. And when that is done, we trigger the function userLoaded. If there's a problem the display error will show to the user
            fetch('https://api.github.com/users/'+ searchText).then(toJson).then(userLoaded).catch(displayError);   
         }
     }
 }
-
 
 //The app only listens to the inputchange, i.e when something is typed in the search bar
 function runApp(){
